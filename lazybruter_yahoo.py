@@ -17,7 +17,7 @@ if method == "a":
                 for perm in itertools.product(chars, repeat=n): 
                     print(''.join(perm)) 
             
-    print_perms ("abcdefghijklmnopqrstuvwxyz1234567890!#$%&'*+-/=?^_`{|}~;", 2, 4)
+    print_perms ("abcdefghijklmnopqrstuvwxyz1234567890!#$%&'*+-/=?^_`{|}~;", 8, 18)
 
     for password in print_perms:
         try:
