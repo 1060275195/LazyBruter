@@ -31,4 +31,11 @@ BY USING THIS SOFTWARE YOU AGREE WITH THESE TERMS.
 
 NOTE:
 If you have any issue with experiencing the program or you want to edit our 
-program, please be kind to let us know!
+program, please be kind to let us know! This programs works only in python 3.x. The other Python verisons will soon be implemented.
+
+_________________________________________________________________________________________
+HOW TO USE
+_________________________________________________________________________________________
+1. Install all requirements using the following command line	[pip -m install requirements.txt]
+2. Enter the following command line to execute the program: [py lazybruter.py]
+3. Enjoy
