@@ -36,14 +36,15 @@ BY USING THIS SOFTWARE YOU AGREE WITH THESE TERMS.
 print ("\nLazyBruter is still on Beta, you might experience some bugs!")
 
 print ("Opening LazyBruter v1.2 (Beta)...")
-proxyconfirm = input ("\nDo you want to enable proxy?<reccomended> [y/n]")
+proxyconfirm = input ("\nDo you want to enable proxy? [y/n]")
 if proxyconfirm == "y":
+	print ("Opening a new shell to generate proxies...")
 	os.system('start cmd /D /C "py proxychanger.py"')
 	
 	if proxyconfirm == "n":
 	    print (method_attack)
 
-method_attack = input("Choose method to attack > (a)Gmail (b)Yahoo (c)Live (d)PHP Website : ")
+method_attack = input("Choose method to attack > (a)Gmail (b)Yahoo (c)Live (d)PHP Website or press (e) to exit : ")
 if method_attack == "a":
     print("\nOpening Gmail Shell...")
     os.system('start cmd /D /C "py lazybruter_gmail.py"')
@@ -58,8 +59,7 @@ if method_attack == "c":
 	
 if method_attack == "d":
     print("\nOpening PHP Shell...")
-    os.system('start cmd /D /C "py lazybruter_php.py"')
-
-else:
-    print("Incorrect input! Please try again! ")	
-    print(method_attack)
+    os.system('start cmd /D /C "py lazybruter_php.py"')	
+	
+if method_attack == "e":
+    input('Press ENTER to exit') 

