@@ -44,7 +44,7 @@ if proxyconfirm == "y":
 	if proxyconfirm == "n":
 	    print (method_attack)
 
-method_attack = input("Choose method to attack > (a)Gmail (b)Yahoo (c)Live (d)PHP Website or press (e) to exit : ")
+method_attack = input("Choose which to Bruteforce > (a)Gmail (b)Yahoo (c)Live (d)PHP Website (e).Zip Files or press (f) to exit : ")
 if method_attack == "a":
     print("\nOpening Gmail Shell...")
     os.system('start cmd /D /C "py lazybruter_gmail.py"')
@@ -60,6 +60,10 @@ if method_attack == "c":
 if method_attack == "d":
     print("\nOpening PHP Shell...")
     os.system('start cmd /D /C "py lazybruter_php.py"')	
-	
+
 if method_attack == "e":
+    print("\nOpening BotNet Master...")
+    os.system('start cmd /D /C "py lazybruter_zip.py"')
+	
+if method_attack == "f":
     input('Press ENTER to exit') 
