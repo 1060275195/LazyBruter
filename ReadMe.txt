@@ -13,7 +13,7 @@ This tool is a bruter tool that is meant to crack email password
 This tool is meant for research purposes only 
 and any malicious usage of this tool is prohibited.
 
-This is the Beta version of LazyBruter (v1.2), but we are improving day by day.
+This is the Beta version of LazyBruter, but we are improving day by day.
 
 @author TheBrowserPirates <tthebrowserpirates@gmail.com>
 @date 14/01/2019
@@ -36,6 +36,6 @@ program, please be kind to let us know! This programs works only in python 3.x. 
 _________________________________________________________________________________________
 HOW TO USE
 _________________________________________________________________________________________
-1. Install all requirements using the following command line	[pip -m install requirements.txt]
+1. Install all requirements using the following command line	[py pip -m install requirements.txt]
 2. Enter the following command line to execute the program: [py lazybruter.py]
 3. Enjoy
