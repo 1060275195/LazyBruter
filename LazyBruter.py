@@ -44,7 +44,7 @@ if proxyconfirm == "y":
 	if proxyconfirm == "n":
 	    print (method_attack)
 
-method_attack = input("Choose which to Bruteforce > \n(a)Gmail \n(b)Yahoo \n(c)Live \n(d)PHP Website \n(e).Zip Files \n(x)Exit \n=> ")
+method_attack = input("Choose which to Bruteforce > \n(a)Gmail \n(b)Yahoo \n(c)Live \n(d)PHP Website \n(e).Zip Files \n(h)Help \n(x)Exit \n=> ")
 if method_attack == "a":
     print("\nOpening Gmail Shell...")
     os.system('start cmd /D /C "py lazybruter_gmail.py"')
@@ -68,6 +68,10 @@ if method_attack == "e":
 if method_attack == "x":
     input('Press ENTER to exit') 
 	
+if method_attack == "h":
+    input("\nOpening Help Shell...")
+    os.system('start cmd /D /C "py lazybruter_help.py"')
+
 else:
     print("Wrong Input. Try again.")
-	print (method_attack)
+    print (method_attack)
