@@ -17,7 +17,7 @@ This is the Beta version of LazyBruter, but we are improving day by day.
 
 @author TheBrowserPirates <tthebrowserpirates@gmail.com>
 @date 14/01/2019
-@version 1.0.1
+@version 1.2.1
 
 Python 3.x is recommended as the other python verison might cause problems.
 
