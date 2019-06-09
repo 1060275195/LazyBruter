@@ -75,8 +75,6 @@ if method == "a":
             file.write(password)
             file.close()
             input("Password saved! Search for <password cracked.txt> in LazyBruter Folder")
-            t1.join()
-            t2.join()
             break
 			
         except smtplib.SMTPAuthenticationError:
