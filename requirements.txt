@@ -4,3 +4,4 @@ itertools
 requests
 traceback
 mechanize
+colorama
