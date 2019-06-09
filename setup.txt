@@ -1,5 +1,0 @@
-Enter command line:
- [py lazybruter_beta.py] (for python 3.x) > recommened
- [python lazybruter_beta.py) (for python 2.x) > not recommended
-
-Note: Use python 3.x because other versions might cause errors.
